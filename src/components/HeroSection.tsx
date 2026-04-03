@@ -5,10 +5,12 @@ import cambioPhoto from "@/assets/CodeWhithAlli.jpg";
 import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const id = href.replace('#', '');
+    const id = href.replace("#", "");
     const element = document.getElementById(id);
+
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -16,6 +18,7 @@ const HeroSection = () => {
 
   const images = [profilePhoto, cambioPhoto];
   const [currentImage, setCurrentImage] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -25,13 +28,28 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-dots opacity-30" />
+    <section
+      id="inicio"
+      className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden"
+    >
+
+      {/* Background gradient */}
       <div className="absolute inset-0" style={{ background: "var(--gradient-bg)" }} />
+
+      {/* Tech background (nuevo fondo profesional) */}
+<div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+  <div className="text-[60px] sm:text-[80px] lg:text-[100px] font-mono font-semibold opacity-[0.02] text-center leading-tight select-none blur-[1px]">
+    REACT • FASTAPI • PYTHON
+    <br />
+    MACHINE LEARNING • APIs
+    <br />
+    SQL • NODE • GIT
+  </div>
+</div>
 
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
           {/* Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -39,6 +57,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7 }}
             className="flex-1 text-center lg:text-left"
           >
+
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -50,8 +69,7 @@ const HeroSection = () => {
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-              Hola, soy{" "}
-              <span className="gradient-text">Allison More</span>
+              Hola, soy <span className="gradient-text">Allison More</span>
             </h1>
 
             <p className="text-lg sm:text-xl font-mono text-primary mb-6">
@@ -71,6 +89,7 @@ const HeroSection = () => {
               >
                 Ver mis proyectos
               </a>
+
               <a
                 href="#contacto"
                 onClick={(e) => handleNavClick(e, "#contacto")}
@@ -79,7 +98,9 @@ const HeroSection = () => {
                 Contáctame
               </a>
             </div>
+
           </motion.div>
+
 
           {/* Photo */}
           <motion.div
@@ -95,7 +116,9 @@ const HeroSection = () => {
               className="w-full h-full object-cover"
             />
           </motion.div>
+
         </div>
+
 
         {/* Scroll indicator */}
         <motion.div
@@ -109,10 +132,14 @@ const HeroSection = () => {
             onClick={(e) => handleNavClick(e, "#sobre-mi")}
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
           >
-            <span className="text-xs tracking-wide font-medium">Explorar</span>
+            <span className="text-xs tracking-wide font-medium">
+              Explorar
+            </span>
+
             <ArrowDown size={16} className="animate-bounce" />
           </a>
         </motion.div>
+
       </div>
     </section>
   );

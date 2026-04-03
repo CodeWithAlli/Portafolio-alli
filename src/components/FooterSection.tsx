@@ -16,8 +16,10 @@ const FooterSection = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            Hecho con <Heart size={12} className="text-primary" /> y mucho café
+               <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            Hecho con
+            <Heart size={14} className="text-red-500 animate-pulse" />
+            y demasiado café
           </div>
 
           <div className="flex items-center gap-4">
