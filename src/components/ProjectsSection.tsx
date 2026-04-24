@@ -17,8 +17,8 @@ const projects = [
       "Se logró una navegación simple y una presentación clara de los servicios legales, mejorando la experiencia del usuario.",
     tech: ["React", "Tailwind", "JavaScript"],
     image: projectAbogado,
-    github: "https://github.com/CodeWithAlli",
-    demo: "https://codewithalli.github.io/staff-abogados/",
+    github: "https://github.com/CodeWithAlli/STAFF-ABOGADOS-DEFENDIENDO-LOS-DERECHOS",
+    demo: " https://codewithalli.github.io/STAFF-ABOGADOS-DEFENDIENDO-LOS-DERECHOS/",
   },
   {
     title: "Gestor de Tareas",
